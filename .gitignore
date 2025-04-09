@@ -2,9 +2,11 @@
 /node_modules
 /public/build
 /public/hot
+/public/admin
 /public/storage
 /storage/*.key
 /storage/pail
+/resources/views/1_admin-template
 /vendor
 .env
 .env.backup
