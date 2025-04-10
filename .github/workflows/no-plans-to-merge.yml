@@ -1,1 +1,28 @@
 name: No plans to merge
+
+on:
+    pull_request: 
+        types:
+            - closed
+
+
+
+
+jobs:
+    no-plans-to-merge:
+        runs-on: ubuntu-latest
+        if: github.event.pull_request.mergeable_state == false
+
+
+        steps:
+            - name: Create a comment on the PR
+              uses: actions/github-script@v7
+              with:
+                script: |
+                    github.rest.issues.createComment({
+                        issue_number: context.issue.number,
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        body: '👋 No plans to merge.'
+                    })
+
