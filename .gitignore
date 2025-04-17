@@ -3,10 +3,12 @@
 /public/build
 /public/hot
 /public/admin
+/public/frontend
 /public/storage
 /storage/*.key
 /storage/pail
 /resources/views/1_admin-template
+/resources/views/1_edu-core-frontend
 /vendor
 .env
 .env.backup
