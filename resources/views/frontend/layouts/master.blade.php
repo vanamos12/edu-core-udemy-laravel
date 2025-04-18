@@ -27,6 +27,7 @@
     <link rel=" stylesheet" href="{{ asset('frontend/assets/css/spacing.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/assets/css/responsive.css') }}">
+    @vite(['resources/css/frontend.css'])
 </head>
 
 <body class="home_3">
@@ -41,12 +42,12 @@
     <!--============ PRELOADER START ===========-->
 
 
-    @include('frontend.layouts.header')
+   
 
     @yield('content')
 
 
-    @include('frontend.layouts.footer')
+   
 
 
     <!--================================
