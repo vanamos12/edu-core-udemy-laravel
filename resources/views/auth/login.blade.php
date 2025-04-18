@@ -20,6 +20,8 @@
                     <div class="tab-content" id="pills-tabContent">
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                             aria-labelledby="pills-home-tab" tabindex="0">
+                            <!-- Session Status -->
+                            <x-auth-session-status class="mb-4" :status="session('status')" />
                             <form action="{{ route('login') }}" method="post">
                                 @csrf
                                 <h2>Log in<span>!</span></h2>
