@@ -1,7 +1,6 @@
 @extends('frontend.layouts.master')
 
 @section('content')
-     @include('frontend.layouts.header')
     
     <!--===========================
         BANNER 3 START
@@ -101,6 +100,5 @@
         BLOG 4 END
     ============================-->
 
-    @include('frontend.layouts.footer')
 
 @endsection

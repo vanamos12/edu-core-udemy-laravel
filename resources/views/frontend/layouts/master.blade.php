@@ -32,6 +32,7 @@
 
 <body class="home_3">
 
+ 
 
     <!--============ PRELOADER START ===========-->
     <div id="preloader">
@@ -42,12 +43,11 @@
     <!--============ PRELOADER START ===========-->
 
 
-   
+    @include('frontend.layouts.header')
 
     @yield('content')
-
-
    
+    @include('frontend.layouts.footer')
 
 
     <!--================================
