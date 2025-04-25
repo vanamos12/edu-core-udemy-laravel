@@ -3,6 +3,7 @@
 /public/build
 /public/hot
 /public/admin
+/public/default-files
 /public/frontend
 /public/storage
 /storage/*.key
