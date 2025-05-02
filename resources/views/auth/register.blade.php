@@ -96,9 +96,9 @@
 
                         <div class="tab-pane fade" id="pills-profile" role="tabpanel"
                             aria-labelledby="pills-profile-tab" tabindex="0">
-                            <form action="{{ route('register') }}" method="post">
+                            <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                <h2>Sign Up<span>!</span></h2>
+                                <h2>Instructor Sign Up<span>!</span></h2>
                                 <p class="new_user">Already have an account? <a href="sign_in.html">Sign In</a></p>
                                  <input 
                                     type="hidden" 
@@ -126,6 +126,17 @@
                                                 value="{{ old('email') }}"
                                                 placeholder="Your email">
                                             <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <div class="wsus__login_form_input">
+                                            <label>Document (Education/Certificate)</label>
+                                            <input 
+                                                type="file" 
+                                                name="document"
+                                                value="{{ old('document') }}"
+                                                >
+                                            <x-input-error :messages="$errors->get('document')" class="mt-2" />
                                         </div>
                                     </div>
                                     <div class="col-xl-12">
