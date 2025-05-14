@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class InstructorRequestController extends Controller
@@ -13,7 +14,9 @@ class InstructorRequestController extends Controller
     public function index()
     {
         //
-        return view('admin.instructor-request.index');
+        $instructorRequests = User::where('approved_status', 'pending')
+            ->orWhere('approved_status', 'rejected')->get();
+        return view('admin.instructor-request.index', compact('instructorRequests'));
     }
 
     /**
@@ -51,9 +54,18 @@ class InstructorRequestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $instructor_request)
     {
         //
+
+        $request->validate(['status' => ['required', 'in:approved,pending,rejected']]);
+
+       $instructor_request->approved_status = $request->status;
+       $request->status === 'approved' ? $instructor_request->role = 'instructor' : true;
+       $instructor_request->save();
+
+       return redirect()->back();
+
     }
 
     /**
